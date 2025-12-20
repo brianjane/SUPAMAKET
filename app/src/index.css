@@ -1,0 +1,113 @@
+:root {
+  /* Warm African Marketplace Theme */
+  --color-primary: #D2691E;
+  /* Chocolate / Deep Terracotta */
+  --color-primary-dark: #8B4513;
+  --color-bg: #F5F1E8;
+  /* Warm Sand */
+  --color-surface: #FFFFFF;
+  --color-surface-dim: #E8E4DA;
+  --color-text: #2C241B;
+  /* Dark Brown-Black */
+  --color-text-light: #5C544B;
+  --color-accent: #DAA520;
+  /* Goldenrod / Ochre */
+  --color-success: #27AE60;
+  --color-danger: #C0392B;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(44, 36, 27, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(44, 36, 27, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(44, 36, 27, 0.1);
+  --shadow-up: 0 -4px 12px rgba(0, 0, 0, 0.08);
+
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --animation-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #222;
+  /* Dark background behind mobile container */
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: 390px;
+  /* STRICT MOBILE WIDTH */
+  height: 100%;
+  background-color: var(--color-bg);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
